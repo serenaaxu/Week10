@@ -11,4 +11,13 @@ class Controller:
         pass
 
     def handleCercaRaggiungibili(self,e):
-        pass
+        self._model.creaGrafo()
+
+    def populate_dropdown(self,dd):
+        self._model.getAllFermate()
+
+        for fermata in self._model._lista_fermate:
+            dd.options.append(ft.dropdown.Option(key = fermata._id_fermata,
+                                                 text = fermata.nome))
+
+
